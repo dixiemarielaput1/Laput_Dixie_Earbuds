@@ -3,6 +3,7 @@
 
   const hotspots = document.querySelectorAll(".Hotspot");
 
+  //objects and arrays
   const hotspotInfo = [
     {
       keyFeature: "Clear Voice Technology",  
