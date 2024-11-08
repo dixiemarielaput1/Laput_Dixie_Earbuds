@@ -6,9 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/main.css" rel="stylesheet"/>
     <!-- link to greensock main library -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-black">
+    <!-- Navbar -->
+    <nav class="bg-black w-full mx-auto m-0 p-0 max-w-screen-xl">
+      <div class="p-4  pl-2 flex items-center justify-between w-full block md:hidden ">
+        <button id="menu-icon" class="w-10 h-10 focus:outline-none text-white">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="flex-1 flex justify-center">
+          <img src="images/jblmixedcolors.svg" alt="logo portfolio" class="md:w-12 md:h-12 w-16 h-16"> 
+        </div>
+      </div>
+  
+      <div class="container px-4 py-4 mx-auto flex items-center m-0 p-0 hidden md:flex justify-between">
+        <div class="m-0 p-0 flex items-center">
+          <img src="images/jblmixedcolors.svg" alt="logo portfolio" class="w-16 h-16 md:w-12 md:h-12"> 
+        </div>
+  
+        <ul id="menu" class="m-0 md:p-4 md:flex md:justify-center  items-center p-0 md:space-x-16">
+          <li><a href="#hero" class="text-[#FF89B2] hover:text-white">Home</a></li>
+          <li><a href="#specs" class="text-[#FF89B2] hover:text-white">Specs</a></li>
+          <li><a href="#shop" class="text-[#FF89B2] hover:text-white">Shop</a></li>
+          <li><a href="#feature" class="text-[#FF89B2] hover:text-white">Feature</a></li>
+          <li><a href="#contact" class="text-[#FF89B2] hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div id="navbar-mobile" class="hidden md:hidden">
+        <ul class="items-center flex pl-10 shadow-md bg-black flex-col space-y-5 h-60">
+          <li><a href="#hero" class="block text-white hover:text-[#7E60BF]">Home</a></li>
+          <li><a href="#specs" class="block text-white hover:text-[#7E60BF]">Specs</a></li>
+          <li><a href="#shop" class="block text-white hover:text-[#7E60BF]">Shop</a></li>
+          <li><a href="#feature" class="block text-white hover:text-[#7E60BF]">Feature</a></li>
+          <li><a href="#contact" class="block text-white hover:text-[#7E60BF]">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  
     <model-viewer src="ar-model-earbuds.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.87" exposure="0.92">
       
       <button class="Hotspot" slot="hotspot-Clear Voice Technology(1)" data-position="-87.05644575232218m 312.829082541004m 81.02555612565337m" data-normal="0.9999999970487323m -0.00007682794808376068m -4.371138793568936e-8m" data-visibility-attribute="visible">

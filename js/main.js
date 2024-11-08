@@ -2,6 +2,8 @@
   console.log("IIFE Fired");
 
   const hotspots = document.querySelectorAll(".Hotspot");
+  const menuIcon = document.querySelector("#menu-icon");
+  const navbarMobile = document.querySelector("#navbar-mobile");
 
   const hotspotInfo = [
     {
@@ -62,6 +64,10 @@
   hotspots.forEach(hotspot => {
     hotspot.addEventListener("mouseover", showInfo);
     hotspot.addEventListener("mouseout", hideInfo);
+  });
+
+  menuIcon.addEventListener("click", () => {
+    navbarMobile.classList.toggle("hidden");
   });
 
 })();
