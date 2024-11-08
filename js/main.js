@@ -40,6 +40,7 @@
   applyGlowEffect();
 
   function showInfo(ev) {
+    console.log(`Hotspot Mouseover: ${ev.currentTarget.slot}`);
     hotspots.forEach((hotspot, counter) => {
       if (hotspot === ev.currentTarget) {
         const { keyFeature, featureDescription, image } = hotspotInfo[counter];
@@ -51,6 +52,7 @@
   }
 
   function hideInfo(ev) {
+    console.log(`Hotspot Mouseout: ${ev.currentTarget.slot}`);
     let hotspotContent = ev.currentTarget.querySelector(".HotspotAnnotation");
     gsap.to(hotspotContent, { ease: "power2.in", scale: 1, autoAlpha: 0 });
     gsap.to(ev.currentTarget, { boxShadow: "0 0 80px 15px rgba(255, 255, 255, 1)",   borderRadius: "50%", duration: 0.2,    scale: 1 ,ease: "power2.in"});
