@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JBL earbuds</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet"/>
+    <!-- link to greensock main library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  </head>
+  <body>
+    <model-viewer src="ar-model-earbuds.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.87" exposure="0.92">
+      
+      <button class="Hotspot" slot="hotspot-Clear Voice Technology(1)" data-position="-87.05644575232218m 312.829082541004m 81.02555612565337m" data-normal="0.9999999970487323m -0.00007682794808376068m -4.371138793568936e-8m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">
+            <img src="images/icons8-sound-wave-100.png" alt="sound wave">
+            <h2>Clear Voice Technology </h2>
+            <p>The advanced noise-cancelling microphone, paired with a built-in copper shield, minimizes background noise for crystal-clear calls.</p>
+          </div>
+      </button>
+      
+      <button class="Hotspot" slot="hotspot-Rapid Charging(2)" data-position="-78.90445951911235m 140.96389999303557m 6.583314148530299m" data-normal="0.8904419586701231m 0.2589912707618476m -0.3742146976120505m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">
+            <img src="images/icons8-charge.svg" alt="charge">
+            <h2>Rapid Charging</h2>
+            <p>Charge up in just 60 minutes for hours of uninterrupted listening.</p>
+          </div>
+      </button>
+      
+      <button class="Hotspot" slot="hotspot-Ergonomic Design(3)" data-position="-216.0306644701114m 329.2635299427752m 126.65627274144252m" data-normal="-0.45454998863443263m 0.30452792211530816m 0.8370466250362462m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">
+        <img src="images/icons8-motion.svg" alt="motion">
+        <h2>Ergonomic Design</h2>
+        <p>Engineered for comfort, these earbuds feature an ergonomic shape that fits perfectly in your ears for all-day wear.</p>
+        </div>
+    </button>
+      
+      <button class="Hotspot" slot="hotspot-Optimal Comfort(4)" data-position="-265.78170459239607m 229.42737315356055m -159.09268276783382m" data-normal="-5.616294492193414e-11m 0.5229571242009406m -0.8523589890694425m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">
+            <img src="images/icons8-ears.svg" alt="ear comfort">
+            <h2>Optimal Comfort</h2>
+            <p>Three pairs of flexible silicone tips ensure a snug and secure fit for any ear shape.</p>
+          </div>
+      </button>
+      
+      <button class="Hotspot" slot="hotspot-Spacial Sound(5)" data-position="-298.5207906290225m 203.58494829947344m -116.28056458769714m" data-normal="-0.9187224643296059m 0.3873950840172732m -0.0766425626880128m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">
+            <img src="images/icons8-sample-rate.svg" alt="sound rate">
+            <h2>Spatial Sound</h2>
+            <p>Feel every sound moving around you, creating a 3D listening experience.</p>
+          </div>
+      </button>
+
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+      
+      </div>
+  </model-viewer>
+  
+  
+  <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
