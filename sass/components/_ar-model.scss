@@ -6,18 +6,16 @@ model-viewer {
   margin: 0 auto;
 }
 
-.Hotspot{
+.Hotspot {
   background: url(/images/moonedited.svg) no-repeat center;
-  border:0;
+  border: 0;
   width: 50px;
   height: 50px;
-  
-z-index: -1;
-
+  z-index: -1;
 }
 
 .Hotspot:not([data-visible]) {
-  opacity:0;
+  opacity: 0;
 }
 
 .Hotspot:focus {
@@ -29,10 +27,9 @@ z-index: -1;
   width: 32px;
 }
 
-
-.HotspotAnnotation{
+.HotspotAnnotation {
   visibility: hidden;
-  z-index: 100; 
+  z-index: 100;
   background: #FFE1FF;
   border: 3px white solid;
   border-radius: 4px;
@@ -45,37 +42,87 @@ z-index: -1;
   max-width: 200px;
   overflow-wrap: break-word;
   padding: 0.5em 1em;
-  position: fixed; 
+  position: fixed;
   top: 50%;
   width: max-content;
-  
-
-
-  img{
-    width: 50px;
-    height:50px;
-    margin: 0 auto 10px;
-    display: block;  
- 
-  }
 }
 
-.HotspotAnnotation p{
+.HotspotAnnotation img {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.HotspotAnnotation p {
   color: black;
   line-height: 22px;
   font-weight: 300;
   font-size: 0.9em;
-
 }
 
-.HotspotAnnotation h2{
+.HotspotAnnotation h2 {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-//custom loading bar
-
-model-viewer::part(default-progress-bar){
+model-viewer::part(default-progress-bar) {
   height: 30px;
-  background-color: #e89B36;
+  background-color: #ffafef;
+}
+
+//mobile
+@media (max-width: 412px) {
+  .HotspotAnnotation {
+    visibility: visible;
+    font-size: 14px;
+    padding: 1em;
+    left: calc(-90% + 0.5em);
+    top: 120%;
+    width: 120px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.75em;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+  }
+}
+
+//tablet
+@media (min-width: 413px) and (max-width: 768px) {
+  .HotspotAnnotation {
+    visibility: visible;
+    font-size: 14px;
+    padding: 1em;
+    left: calc(-90% + 0.5em);
+    top: 120%;
+    width: 120px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    h2 {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.599em;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+  }
 }
