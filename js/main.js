@@ -2,6 +2,8 @@
   console.log("IIFE Fired");
 
   const hotspots = document.querySelectorAll(".Hotspot");
+  const menuIcon = document.querySelector("#menu-icon");
+  const navbarMobile = document.querySelector("#navbar-mobile");
 
   const hotspotInfo = [
     {
@@ -44,18 +46,17 @@
     hotspots.forEach((hotspot, counter) => {
       if (hotspot === ev.currentTarget) {
         const { keyFeature, featureDescription, image } = hotspotInfo[counter];
-        let hotspotContent = ev.currentTarget.querySelector(".HotspotAnnotation");
-        hotspotContent.innerHTML = `<img src="${image}" alt="${keyFeature}"><h2>${keyFeature}</h2><p>${featureDescription}</p>`;
-        gsap.to(hotspotContent, { scale: 1.1,duration: 0.3, ease: "power2.out", autoAlpha: 1});
-        gsap.to(ev.currentTarget, { boxShadow: "0 0 50px 20px rgba(255, 105, 180, 1)", borderRadius: "50%" ,scale: 1.2, ease: "power3.out", duration: 0.5});}
-    });
+        let hotspotDetails  = ev.currentTarget.querySelector(".HotspotAnnotation");
+        hotspotDetails .innerHTML = `<img src="${image}" alt="${keyFeature}"><h2>${keyFeature}</h2><p>${featureDescription}</p>`;
+        gsap.to(hotspotDetails, { scale: 1.1, duration: 0.3, ease: "power2.out", autoAlpha: 1, onComplete: () => console.log(`Hotspot Info: ${keyFeature}`)});
+        gsap.to(ev.currentTarget, { boxShadow: "0 0 40px 15px rgba(255, 105, 180, 1)", borderRadius: "50%", scale: 1.2, ease: "power3.out", duration: 0.5, onComplete: () => console.log(`Hotspot is over: ${keyFeature}`) });}});
   }
 
   function hideInfo(ev) {
     console.log(`Hotspot Mouseout: ${ev.currentTarget.slot}`);
-    let hotspotContent = ev.currentTarget.querySelector(".HotspotAnnotation");
-    gsap.to(hotspotContent, { ease: "power2.in", scale: 1, autoAlpha: 0 });
-    gsap.to(ev.currentTarget, { boxShadow: "0 0 80px 15px rgba(255, 255, 255, 1)",   borderRadius: "50%", duration: 0.2,    scale: 1 ,ease: "power2.in"});
+    let hotspotDetails  = ev.currentTarget.querySelector(".HotspotAnnotation");
+    gsap.to(hotspotDetails,{ease: "power2.in", scale: 1, autoAlpha: 0});
+    gsap.to(ev.currentTarget, { boxShadow: "0 0 80px 15px rgba(255, 255, 255, 1)",borderRadius: "50%", duration: 0.2, scale: 1 ,ease: "power2.in",onComplete: () => console.log(`Mouseout is Done: ${ev.currentTarget.slot}`)});
     applyGlowEffect();
   }
 
@@ -64,4 +65,7 @@
     hotspot.addEventListener("mouseout", hideInfo);
   });
 
+  menuIcon.addEventListener("click", () => {
+    navbarMobile.classList.toggle("hidden");
+  });
 })();
