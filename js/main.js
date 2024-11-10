@@ -56,7 +56,7 @@
       console.log(`Hotspot Mouseout: ${ev.currentTarget.slot}`);
       let hotspotDetails  = ev.currentTarget.querySelector(".HotspotAnnotation");
       gsap.to(hotspotDetails,{ease: "power2.in", scale: 1, autoAlpha: 0});
-      gsap.to(ev.currentTarget, { boxShadow: "0 0 80px 15px rgba(255, 255, 255, 1)",borderRadius: "50%", duration: 0.2, scale: 1 ,ease: "power2.in",onComplete: () => console.log(`Mouseout is Done: ${ev.currentTarget.slot}`)});
+      gsap.to(ev.currentTarget, { boxShadow: "0 0 80px 15px rgba(255, 255, 255, 1)",borderRadius: "50%", duration: 0.2, scale: 1 ,ease: "power2.in"});
       applyGlowEffect();
     }
 
