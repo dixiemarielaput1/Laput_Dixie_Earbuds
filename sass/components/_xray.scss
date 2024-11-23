@@ -1,284 +1,328 @@
 #comparison-con {
   display: none;
-  
-
 }
 
 @media screen and (min-width: 1200px) {
+  #mobile-tablet-view {
+    display: none;
+  }
+
   #comparison-con {
-    justify-content: center;
-    position: relative;
-    display: flex;
     align-items: center;
-    border-radius: solid white 9px;
+    position: relative;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+  }
 
-    #xray {
-      width: 100%;
-      position: relative;
-      border-radius: solid white 9px;
-      aspect-ratio: 16 / 10;
-      background-image: url(../images/conv1.jpg);
-      background-size: cover;
-    }
-    #divisor {
-      
-      position: absolute;
-      background-image: url(../images/conv2.jpg);
-      background-size: cover;
-      width: 100%;
-      height: -100%;
-      top: 0;
-      left: 0;
-    }
+  #xray {
+    position: relative;
+    background-size: cover;
+    aspect-ratio: 16 / 10;
+    background-image: url(../images/conv1.jpg);
+    width: 100%;
+  }
 
-    input[type=range] {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      background-color: white;
-      transform: translateX(-50%) rotate(270deg);
-      width: 62.3%;
-      height: 1px;
-    }
-  
-    input[type=range]:focus {
-      outline: none;
-      
-    }
-  
-    .slider::-moz-range-track {
-      position: relative;
-      outline: none;
-      height: 15px;
-      width: 98%;
-      background-color: rgba(153, 0, 255, 0.2);
-    }
-  
-    .slider:active {
-      border: none;
-      outline: none;
-    }
-  
-    .slider::-webkit-slider-thumb {
-      background-size: contain;
-      -webkit-appearance: none;
-      appearance: none;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url(../images/moonbutton.svg);
-      border-radius: 0;
-      width: 50px;
-      height: 35px;
-    }
-  
-    .slider::-moz-range-thumb {
-      background: url(../images/moonbutton.svg) no-repeat center center;
-      -moz-appearance: none;
-      appearance: none;
-      width: 50px;
-      height: 35px;
-      background-size: contain;
-      border-radius: 0;
-    }
-  
-    .slider:focus::-webkit-slider-thumb {
-      background-position: center center;
-      background-size: contain;
-      background: url(../images/moonbutton.svg);
-      background-repeat: no-repeat;
+  #divisor {
+    top: 0;
+    left: 0;
+    background-image: url(../images/conv2.jpg);
+    position: absolute;
+    height: -100%;
+    width: 100%;
+    background-size: cover;
+  }
 
-    }
-  
-    .slider:focus::-moz-range-thumb {
-      background: url(../images/moonbutton.svg) no-repeat center center;
-      background-size: contain;
-    }
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    background-color: white;
+    transform: translateX(-50%) rotate(270deg);
+    width: 62.3%;
+    height: 1px;
+
+    bottom: 50%;
+    left: 50%;
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-moz-range-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 15px;
+    width: 98%;
+    position: relative;
+    outline: none;
+  }
+
+  input[type=range]::active {
+    border: none;
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+    background: #fff;
+    appearance: none;
+    width: 20px;
+    height: 15px;
+  }
+
+  input[type=range]:focus::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 40px;
+    border-radius: 0;
+    background-image: url(../images/moons.svg);
+  }
+
+  input[type=range]:focus::-moz-range-thumb {
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/moons.svg);
+    border: none;
+    border-radius: 0;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  #mobile-tablet-view {
+    display: none;
+  }
+
   #comparison-con {
+    border: 2px solid white;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  #xray {
+    aspect-ratio: 16 / 10;
+    width: 100%;
     position: relative;
+    background-image: url(../images/conv1.jpg);
+    background-size: cover;
+  }
 
-    #xray {
-      aspect-ratio: 16 / 10;
-      background-image: url(../images/conv1.jpg);
-      width: 100%;
-      position: relative;
-      background-size: cover;
-    }
-  
-    #divisor {
-      background-image: url(../images/conv2.jpg);
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-size: cover;
-      height: 50%;
-      width: 100%;
-    }
-  
-    input[type=range] {
-      background-color: white;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      position: absolute;
-      transform: translateX(-50%) rotate(270deg);
-      bottom: 50%;
-      left: 50%;
-      width: 62.3%;
-      height: 1px;
-    }
-  
-    input[type=range]:focus {
-      outline: none;
-    }
-  
-    .slider::-moz-range-track {
-      background-color: rgba(153, 0, 255, 0.2);
-      position: relative;
-      height: 15px;
-      width: 98%;
-      outline: none;
-    }
-  
-    .slider:active {
-      border: none;
-      outline: none;
-    }
-  
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url(../images/moonbutton.svg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 0;
-      background-size: contain;
-      width: 50px;
-      height: 35px;
-    }
-  
-    .slider::-moz-range-thumb {
-      border-radius: 0;
-      -moz-appearance: none;
-      appearance: none;
-      background: url(../images/moonbutton.svg) no-repeat center center;
-      height: 35px;
-      width: 50px;
-      background-size: contain;
-    }
-  
-    .slider:focus::-webkit-slider-thumb {
-      background: url(../images/moonbutton.svg);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
+  #divisor {
+    top: 0;
+    left: 0;
+    background-size: cover;
+    height: 50%;
+    width: 100%;
+    background-image: url(../images/conv2.jpg);
+    position: absolute;
+  }
 
-    }
-  
-    .slider:focus::-moz-range-thumb {
-      background-size: contain;
-      background: url(../images/moonbutton.svg) no-repeat center center;
-    }
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    transform: translateX(-50%) rotate(270deg);
+    width: 62.3%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: 1px;
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: 98%;
+    outline: none;
+  }
+
+  input[type=range]::active {
+    border: none;
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/moons.svg);
+    border-radius: 0;
+    border: none;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+    height: 15px;
+    background: #fff;
+    appearance: none;
+    width: 20px;
+  }
+
+  input[type=range]:focus::-webkit-slider-thumb {
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+  }
+
+  input[type=range]:focus::-moz-range-thumb {
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
   }
 }
 
 @media screen and (max-width: 767px) {
+  #mobile-tablet-view {
+    display: none;
+  }
+
   #comparison-con {
     display: flex;
     position: relative;
+    border: 2px solid white;
     justify-content: center;
     align-items: center;
-  
-    #xray {
-      aspect-ratio: 16 / 10;
-      position: relative;
-      background-image: url(../images/conv1.jpg);
-      width: 100%;
-      background-size: cover;
-    }
-  
-    #divisor {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      background-image: url(../images/conv2.jpg);
-      background-size: cover;
-      left: 0;
-      height: 50%;
-    }
-  
-    input[type=range] {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-color: white;
-      appearance: none;
-      position: absolute;
-      left: 50%;
-      bottom: 50%;
-      width: 62.3%;
-      transform: translateX(-50%) rotate(270deg);
-      height: 1px;
-    
-    }
-  
-    input[type=range]:focus {
-      outline: none;
-    }
-  
-    .slider::-moz-range-track {
-      outline: none;
-      height: 15px;
-      width: 98%;
-      background-color: rgba(153, 0, 0, 0.2);
-      position: relative;
-    }
-  
-    .slider:active {
-      border: none;
-      outline: none;
-    }
-  
-    .slider::-webkit-slider-thumb {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url(../images/moonbutton.svg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      width: 50px;
-      border-radius: 0;
-      height: 35px;
-    }
-  
-    .slider::-moz-range-thumb {
-      border-radius: 0;
-      -moz-appearance: none;
-      appearance: none;
-      width: 50px;
-      height: 35px;
-      background-size: contain;
-      background: url(../images/moonbutton.svg) no-repeat center center;
-    }
-  
-    .slider:focus::-webkit-slider-thumb {
-      background: url(../images/moonbutton.svg);
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-  
-    .slider:focus::-moz-range-thumb {
-      background: url(../images/moonbutton.svg) no-repeat center center;
-      background-size: contain;
-    }
+  }
+
+  #xray {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background-image: url(../images/conv1.jpg);
+    width: 100%;
+    background-size: cover;
+  }
+
+  #divisor {
+    background-size: cover;
+    background-image: url(../images/conv2.jpg);
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0;
+    left: 0;
+ 
+
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    bottom: 50%;
+    width: 62.3%;
+    height: 1px;
+    left: 50%;
+    background-color: white;
+    transform: translateX(-50%) rotate(270deg);
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 15px;
+    width: 98%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    outline: none;
+  }
+
+  input[type=range]::active {
+    border: none;
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+
+  }
+
+  input[type=range]::-moz-range-thumb {
+    background: #fff;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 15px;
+  }
+
+  input[type=range]:focus::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+    height: 40px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
+  }
+
+  input[type=range]:focus::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/moons.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
   }
 }

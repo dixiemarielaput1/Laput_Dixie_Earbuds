@@ -72,7 +72,6 @@
 })();
 
 (() => {
-  (() => {
     const canvas = document.querySelector("#explode-view");
     const context = canvas.getContext("2d");
     
@@ -120,7 +119,7 @@
       context.drawImage(imagesList[buds.frame], 0, 0);
     }
   })();
-})();
+
 
 (() => {
   const divisor = document.querySelector("#divisor");
@@ -136,39 +135,43 @@
 
 (() => {
   const slider = document.querySelector('input[type=range]');
-  gsap.to(slider, {
-    ease: "bounce.out",
-    boxShadow: "0 0 25px 8px rgba(255, 0, 0, 0.7)",
-    backgroundColor: "white",
-    repeat: -1,
-    yoyo: true,
-    duration: 1
+
+  gsap.to(slider, {ease: "bounce.out",  boxShadow: "0 0 25px 8px rgba(255, 105, 180, 0.7)",backgroundColor: "white",yoyo: true,duration: 1,repeat: -1,});
+
+  const sliderTimeline = gsap.timeline({
+    scrollTrigger: {trigger: slider,start: "top bottom",end: "bottom top",onEnter: (e) => sliderTimeline.play(),onLeaveBack: (e) => sliderTimeline.reverse(),
+    }
   });
 
+  sliderTimeline.fromTo(slider, {opacity: 0,y: -100,
+  }, {opacity: 1,y: 0,ease: "bounce.out",boxShadow: "0 0 25px 8px rgba(255, 105, 180, 0.7)",backgroundColor: "white",duration: 1,repeat: 0, yoyo: true});
 })();
+
 
 (() => {
   const menuEffect = gsap.timeline({ paused: true });
   menuEffect.from("#menu li", {y: 20,ease: "circ.out",duration: 0.8,stagger: 0.1,opacity: 0});
   menuEffect.play();
-  ScrollTrigger.create({trigger:"#menu",start:"top top",onEnter: () => menuEffect.restart(),onLeaveBack:() => menuEffect.restart(),markers: false,once: false});
+  ScrollTrigger.create({trigger:"#menu",start:"top top",onEnter: (e) => menuEffect.restart(),onLeaveBack:(e) => menuEffect.restart(),markers: false,once: false});
 
   const heroEffect = gsap.timeline({ paused: true });
   heroEffect.from(".hero-text-1",{autoAlpha: 0,duration: 1.2,ease: "roughEase",y: -150,stagger: 0.5});
   heroEffect.play();
-  ScrollTrigger.create({start:"top top",trigger: ".hero-text-1",onEnter: () => heroEffect.restart(),onLeaveBack: () => heroEffect.restart(),once: false,markers: false,});
+  ScrollTrigger.create({start:"top top",trigger: ".hero-text-1",onEnter: (e) => heroEffect.restart(),onLeaveBack: (e) => heroEffect.restart(),once: false,markers: false,});
 
   const connectEffect = gsap.timeline({ paused: true });
   connectEffect.from(".connect", {opacity: 0,x: -300,stagger: {amount: 1.5,ease: "power4.out",from: "start"},duration: 1.2});
   connectEffect.play();
-  ScrollTrigger.create({start: "top top",trigger: ".connect",onEnter: () => connectEffect.restart(),onLeaveBack: () => connectEffect.restart(),markers: false,once: false});
+  ScrollTrigger.create({start: "top top",trigger: ".connect",onEnter: (e) => connectEffect.restart(),onLeaveBack: (e) => connectEffect.restart(),markers: false,once: false});
 
   const aboutEffect = gsap.timeline();aboutEffect.from(".about-text", {x: -200,opacity: 0,duration: 1.2,stagger: { amount: 1.5, ease: "ease.out", from: "start" },});
-  ScrollTrigger.create({trigger: ".about-text",start: "top bottom",end: "bottom top",onEnter: () => aboutEffect.restart(),onLeaveBack: () => aboutEffect.restart(),markers: false,once: false,scrub: true });
+  ScrollTrigger.create({trigger: ".about-text",start: "top bottom",end: "bottom top",onEnter: (e) => aboutEffect.restart(),onLeaveBack: (e) => aboutEffect.restart(),markers: false,once: false,scrub: true });
 
   const aboutInfoEffect = gsap.timeline();aboutInfoEffect.from(".about-info ", {y: -70,opacity: 0,duration: 1.2,stagger: { amount: 3.5, ease: "ease.in", from: "start" },});
-  ScrollTrigger.create({trigger: ".about-info ",start: "top bottom",end: "bottom top",onEnter: () => aboutInfoEffect.restart(),onLeaveBack: () => aboutInfoEffect.restart(),markers: false,once: false});
+  ScrollTrigger.create({trigger: ".about-info ",start: "top bottom",end: "bottom top",onEnter: (e) => aboutInfoEffect.restart(),onLeaveBack: (e) => aboutInfoEffect.restart(),markers: false,once: false});
 
   const aboutDetailEffect = gsap.timeline();aboutDetailEffect.from(".about-details", {y: 20,opacity: 0,duration: 1.4,stagger: { amount: 0.5, ease: "ease.out", from: "start" },});
-  ScrollTrigger.create({trigger: ".about-details",start: "top bottom",end: "bottom top",onEnter: () => aboutDetailEffect.restart(),onLeaveBack: () => aboutDetailEffect.restart(),markers: false,once: false});
+  ScrollTrigger.create({trigger: ".about-details",start: "top bottom",end: "bottom top",onEnter: (e) => aboutDetailEffect.restart(),onLeaveBack: (e) => aboutDetailEffect.restart(),markers: false,once: false});
 })();
+
+
