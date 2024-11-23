@@ -4,21 +4,20 @@
     <title>JBL earbuds</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/main.css" rel="stylesheet"/>
-    <!-- link to greensock main library -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
-  <body class="bg-black">
-    <!-- Navbar -->
-    <nav class="bg-black w-full mx-auto m-0 p-0 max-w-screen-xl">
-      <div class="p-4  pl-2 flex items-center justify-between w-full block md:hidden ">
-        <button id="menu-icon" class="w-10 h-10 focus:outline-none text-white">
+  <body class="bg-black">    
+    <nav class="max-w-screen-xl bg-black mx-auto m-0 p-0 w-full"> 
+      <div class="p-4 flex pl-2 items-center md:hidden justify-between w-full block">
+        <button id="menu-icon" class="text-white  w-10 h-10 focus:outline-none">
           <i class="fas fa-bars"></i>
         </button>
-        <div class="flex-1 flex justify-center">
-          <img src="images/jblmixedcolors.svg" alt="logo portfolio" class="md:w-12 md:h-12 w-16 h-16"> 
+        <div class="flex-1 justify-center flex"> 
+          <img src="images/jblmixedcolors.svg" alt="logo jbl" class="h-16 md:w-12 md:h-12 w-16"> 
         </div>
       </div>
   
@@ -46,8 +45,73 @@
         </ul>
       </div>
     </nav>
+
+    <div class="container-hero mx-auto">
+      <div class="mb-16 con-hero mt-16">
+        <div class="px-6 text-center md:px-16 content">
+          <a href="#about" class="mb-19 px-8 text-white py-3 hover:bg-[#E681B5] rounded-full bg-[#d48eff] ">
+            About Us
+          </a>
+      
+          <h1 class="font-bold mt-8 leading-tight text-white text-5xl md:text-9xl mb-8 ">
+            Unleash True Sound with JBL Intro Earbuds,
+          </h1>
+      
+          <h1 class="connect md:text-7xl leading-tight font-bold text-4xl mb-10">
+            Connect Every Audience
+          </h1>
+      
+          <p class="text-lg mb-8 md:text-xl text-white">
+            JBL has been at the forefront of audio technology for over 70 years, pioneering innovations that have shaped the way we experience sound.
+          </p>
+      
+          <div class="gap-6 flex justify-center">
+            <a href="#get-started" class="hover:bg-[#E681B5] mb-10 bg-white text-black rounded-full px-8 py-3 text-black inline-block">
+              Get Started
+            </a>
+      
+            <a href="#shop-now" class="border px-8 inline-block rounded-full py-3 relative hover:bg-[#E681B5] border-white text-white mb-10 bg-black">
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   
-    <model-viewer src="ar-model-earbuds.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.87" exposure="0.92">
+    <div class="items-center col-span-full mb-8 justify-center flex ">
+      <canvas id="explode-view" class="w-full" ></canvas>
+    </div>
+
+    <div class="container-about py-12 mx-auto px-6">
+      <div class="mb-3 text-center">
+        <h1 class="lg:text-8xl md:text-6xl font-bold text-white mb-10 mt-17 text-5xl">ABOUT JBL</h1>
+        <p class="connect2  text-white mt-2 text-4xl ">JBL has been an industry leader in audio technology for decades, providing high-quality sound that has made it a trusted name across the globe.</p>
+      </div>
+    
+      <hr class="border-t-6 mb-10 mt-10 border-white ">
+    
+      <div class="flex justify-between">
+
+  <div class="p-4 rounded-lg shadow-md w-full md:w-1/2 m-4">
+    <h2 class="font-semibold text-2xl text-white mb-4">JBL Information</h2>
+  </div>
+
+<div class="rounded-lg w-full md:w-1/2 p-1 shadow-md relative m-8 sm:mb-20 md:mb-16">
+  <div class="top-0 right-0 space-y-2 absolute">
+    <h2 class="sm:text-2xl md:text-3xl text-xl font-semibold text-white mb-2">World-Class Sound</h2>
+    <h2 class="md:text-3xl font-semibold text-white mb-2 text-xl sm:text-2xl">Durability & Design</h2>
+    <h2 class="font-semibold text-white mb-2 text-xl sm:text-2xl md:text-3xl">History & Innovation</h2>
+
+  </div>
+</div>
+    </div>
+    
+
+
+    
+
+<model-viewer class="mt-40"src="ar-model-earbuds.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.87" exposure="0.92">
       
       <button class="Hotspot" slot="hotspot-Clear Voice Technology(1)" data-position="-87.05644575232218m 312.829082541004m 81.02555612565337m" data-normal="0.9999999970487323m -0.00007682794808376068m -4.371138793568936e-8m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">
@@ -96,10 +160,51 @@
 
       </div>
   </model-viewer>
-  
-  
-  <!-- Loads <model-viewer> for browsers: -->
+
+    
+      <div class="xray-container mt-30 flex flex-col pt-11"> 
+        <div class="jblinfo rounded-lg p-8 shadow-lg ml-20 mr-20 bg-[#D48EFF] p-8 border-2 border-white">
+          <div class="md:px-12 content text-center px-4">
+            <h1 class="text-white mb-6 text-4xl md:text-5xl leading-tight font-bold">
+              Why Choose JBL?
+            </h1>
+            <p class="leading-relaxed md:text-xl text-white mb-6 text-lg"> 
+              JBL has been an industry leader in audio technology for decades, providing high-quality sound that has made it a trusted name across the globe. Whether you’re a music enthusiast, athlete, or someone who simply enjoys great sound, JBL offers products that deliver clarity, power, and durability.
+            </p>
+            <button class="transition duration-300 ease-in-out text-white text-lg py-3 font-semibold px-8 rounded-md bg-black hover:bg-[#FF85FF]">
+              Discover More
+            </button>
+
+            
+</div>
+          </div>
+        </div> 
+
+        <div class="xray-section p-20 mx-4 sm:mx-0 ">
+          <div id="comparison-con" class="relative w-full">
+            <div id="xray" class="border-2 rounded-lg border-white w-full sm:w-full">
+              <div id="divisor"></div>
+            </div>
+            <input type="range" id="slider" min="0" max="100" value="100" class="w-full mt-4">
+          </div>
+        </div>
+
+        <footer class="bg-[#DE7EB6] text-white text-center py-4 px-12">
+          <p>&copy; 2024 JBL. All rights reserved.</p>
+        </footer>
+       
+    
+
+
+
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script src="js/main.js"></script>
+
+
+
+
+
   </body>
 </html>
