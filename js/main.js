@@ -37,6 +37,7 @@
     hotspots.forEach(hotspot => {
       gsap.to(hotspot, {boxShadow: "0 0 80px 30px rgba(138, 43, 226, 1)",backgroundColor: "#7950F2",duration: .5,scale: 1.2, ease: "power2.out", borderRadius: "50%"}); 
     });
+
   }
 
   applyGlowEffect();
@@ -71,65 +72,54 @@
 })();
 
 (() => {
-  const canvas = document.querySelector("#explode-view");
-  const context = canvas.getContext("2d");
+  (() => {
+    const canvas = document.querySelector("#explode-view");
+    const context = canvas.getContext("2d");
+    
+    canvas.width = 3840;
+    canvas.height = 2160;
+    
+    const imageholder1 = [];
+    const imageholder2 = [];
+    const imageholder3 = [];
+    
+    for (let i = 0; i < 120; i++) {
+      const img = new Image();
+      img.src = `images/meowk${(i + 1).toString().padStart(4, '0')}.png`;
+      imageholder1.push(img);
+    }
+    
+    for (let i = 0; i < 150; i++) {
+      const img = new Image();
+      img.src = `images/meowers${(i + 1).toString().padStart(4, '0')}.png`;
+      imageholder2.push(img);
+    }
   
-  canvas.width = 3840;
-  canvas.height = 2160;
+    for (let i = 0; i < 40; i++) {
+      const img = new Image();
+      img.src = `images/opencase${(i + 1).toString().padStart(4, '0')}.png`;
+      imageholder3.push(img);
+    }
   
-  const imageholder1 = [];
-  const imageholder2 = [];
-  const imageholder3 = [];
-
+    const imagesList = [...imageholder1, ...imageholder2, ...imageholder3];
+    
+    const buds = { frame: 0 };
+    
+    gsap.to(buds,{
+      frame: imagesList.length - 1,snap: "frame",scrollTrigger: {trigger: "#explode-view",pin: true,scrub: 10,start: "top top",end: "bottom bottom"
+      },
+      onUpdate: render
+    });
   
-  const totalImages = 460;
-  
-  for (let i = 0; i < 120; i++) {
-    const img = new Image();
-    img.src = `images/meowk${(i + 1).toString().padStart(4, '0')}.png`;
-    imageholder1.push(img);
-  }
-  
-  for (let i = 0; i < 150; i++) {
-    const img = new Image();
-    img.src = `images/meowers${(i + 1).toString().padStart(4, '0')}.png`;
-    imageholder2.push(img);
-  }
-
-  
-
-  for (let i = 0; i < 40; i++) {
-    const img = new Image();
-    img.src = `images/opencase${(i + 1).toString().padStart(4, '0')}.png`;
-    imageholder3.push(img);
-  }
-
-  
-  const imagesList = [...imageholder1, ...imageholder2, ...imageholder3];
-  
-  const buds = { frame: 0 };
-  
-  gsap.to(buds, {
-    frame: imagesList.length - 1,
-    snap: "frame",
-    scrollTrigger: {
-      trigger: "#explode-view",
-      pin: true,
-      scrub: 10,
-      start: "top top",
-      end: "bottom bottom",
-      markers: false,
-     
-    },
-    onUpdate: render
-  });
-  
-  imagesList[0].addEventListener("load", render);
-  
-  function render() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(imagesList[buds.frame], 0, 0);
-  }
+    gsap.fromTo(context.canvas,{opacity:0},{opacity: 1,x: 0,ease:"power3.inOut",duration: 1.4 });
+    
+    imagesList[0].addEventListener("load", render);
+    
+    function render() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(imagesList[buds.frame], 0, 0);
+    }
+  })();
 })();
 
 (() => {
@@ -155,4 +145,30 @@
     duration: 1
   });
 
+})();
+
+(() => {
+  const menuEffect = gsap.timeline({ paused: true });
+  menuEffect.from("#menu li", {y: 20,ease: "circ.out",duration: 0.8,stagger: 0.1,opacity: 0});
+  menuEffect.play();
+  ScrollTrigger.create({trigger:"#menu",start:"top top",onEnter: () => menuEffect.restart(),onLeaveBack:() => menuEffect.restart(),markers: false,once: false});
+
+  const heroEffect = gsap.timeline({ paused: true });
+  heroEffect.from(".hero-text-1",{autoAlpha: 0,duration: 1.2,ease: "roughEase",y: -150,stagger: 0.5});
+  heroEffect.play();
+  ScrollTrigger.create({start:"top top",trigger: ".hero-text-1",onEnter: () => heroEffect.restart(),onLeaveBack: () => heroEffect.restart(),once: false,markers: false,});
+
+  const connectEffect = gsap.timeline({ paused: true });
+  connectEffect.from(".connect", {opacity: 0,x: -300,stagger: {amount: 1.5,ease: "power4.out",from: "start"},duration: 1.2});
+  connectEffect.play();
+  ScrollTrigger.create({start: "top top",trigger: ".connect",onEnter: () => connectEffect.restart(),onLeaveBack: () => connectEffect.restart(),markers: false,once: false});
+
+  const aboutEffect = gsap.timeline();aboutEffect.from(".about-text", {x: -200,opacity: 0,duration: 1.2,stagger: { amount: 1.5, ease: "ease.out", from: "start" },});
+  ScrollTrigger.create({trigger: ".about-text",start: "top bottom",end: "bottom top",onEnter: () => aboutEffect.restart(),onLeaveBack: () => aboutEffect.restart(),markers: false,once: false,scrub: true });
+
+  const aboutInfoEffect = gsap.timeline();aboutInfoEffect.from(".about-info ", {y: -70,opacity: 0,duration: 1.2,stagger: { amount: 3.5, ease: "ease.in", from: "start" },});
+  ScrollTrigger.create({trigger: ".about-info ",start: "top bottom",end: "bottom top",onEnter: () => aboutInfoEffect.restart(),onLeaveBack: () => aboutInfoEffect.restart(),markers: false,once: false});
+
+  const aboutDetailEffect = gsap.timeline();aboutDetailEffect.from(".about-details", {y: 20,opacity: 0,duration: 1.4,stagger: { amount: 0.5, ease: "ease.out", from: "start" },});
+  ScrollTrigger.create({trigger: ".about-details",start: "top bottom",end: "bottom top",onEnter: () => aboutDetailEffect.restart(),onLeaveBack: () => aboutDetailEffect.restart(),markers: false,once: false});
 })();
